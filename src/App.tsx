@@ -1,7 +1,8 @@
 import React, {useState} from 'react';
 import './App.css';
 import Square from "./components/square/Square";
-
+import Title from "./components/tite/Title";
+import ResetBtn from "./components/ResetBtn/ResetBtn";
 
 
 function App() {
@@ -21,6 +22,8 @@ function App() {
   };
 
   const [items, setItems] = useState(createItems());
+  const [count, setCount] = useState(0);
+
 
   const clicked = (id: number) => {
     const itemsCopy = [...items];
@@ -29,6 +32,10 @@ function App() {
     itmCopy.clicked = true;
     itemsCopy[index] = itmCopy;
     setItems(itemsCopy);
+    setCount(count + 1);
+    if (itmCopy.hasItem === true) {
+      console.log('You win!');
+    }
     console.log(items);
   }
 
@@ -40,9 +47,13 @@ function App() {
               key={item.id}
               squareClass={item.clicked ? 'test' : 'square'}
               onChangeSquare={() => clicked(item.id)}
+              ring={item.hasItem ? 'ring' : ''}
+              hide={item.clicked && item.hasItem ? ' ' : 'hide'}
           />
         })}
       </div>
+      {/*<ResetBtn resetGame={() => }/>*/}
+      <span>Количество попыток: {count}</span>
     </div>
   );
 }

@@ -13,6 +13,7 @@
   height: 20px;
   display: inline-block;
   margin-left: 1px;
+
 }
 
 .test {
@@ -20,4 +21,16 @@
   width: 20px;
   height: 20px;
   display: inline-block;
+}
+
+.ring {
+  display: block;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: red;
+}
+
+#hide {
+  background: transparent;
 }
