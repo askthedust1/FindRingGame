@@ -1,14 +1,16 @@
 .App {
   text-align: center;
+  margin-top: 20px;
 }
 
 .wrap {
+  margin: 0 auto;
   width: 126px;
   height: 126px;
 }
 
 .square {
-  background: gray;
+  background: hotpink;
   width: 20px;
   height: 20px;
   display: inline-block;
@@ -33,4 +35,12 @@
 
 #hide {
   background: transparent;
+}
+
+.reset {
+  margin-top: 20px;
+}
+
+.win {
+  margin-top: 20px;
 }

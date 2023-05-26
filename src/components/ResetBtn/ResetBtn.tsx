@@ -1,5 +1,4 @@
 import React from 'react';
-import Square from "../square/Square";
 
 interface IResetBtnProps {
     resetGame: React.MouseEventHandler;

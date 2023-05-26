@@ -23,6 +23,7 @@ function App() {
 
   const [items, setItems] = useState(createItems());
   const [count, setCount] = useState(0);
+  const [win, setWin] = useState('');
 
 
   const clicked = (id: number) => {
@@ -34,9 +35,15 @@ function App() {
     setItems(itemsCopy);
     setCount(count + 1);
     if (itmCopy.hasItem === true) {
-      console.log('You win!');
+      setWin('You win!');
+      setCount(count);
     }
-    console.log(items);
+  };
+
+  const reset = () => {
+    setItems(createItems());
+    setWin('');
+    setCount(0);
   }
 
   return (
@@ -52,8 +59,9 @@ function App() {
           />
         })}
       </div>
-      {/*<ResetBtn resetGame={() => }/>*/}
-      <span>Количество попыток: {count}</span>
+      <Title text={win}/>
+      <ResetBtn resetGame={() => reset()}/>
+      <div>Количество попыток: {count}</div>
     </div>
   );
 }

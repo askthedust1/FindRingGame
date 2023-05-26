@@ -1,9 +1,13 @@
 import React from 'react';
 
-const Title = () => {
+interface ITitleProps {
+    text: string;
+}
+
+const Title: React.FC<ITitleProps> = props => {
 
     return (
-        <div>You win!</div>
+        <div className="win">{props.text}</div>
     );
 };
 
