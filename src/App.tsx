@@ -33,6 +33,7 @@ function App() {
     itmCopy.clicked = true;
     itemsCopy[index] = itmCopy;
     setItems(itemsCopy);
+
     setCount(count + 1);
 
     if (itmCopy.hasItem === true) {
@@ -58,12 +59,12 @@ function App() {
 
   return (
     <div className="App">
-      <div className={win[0].text ? 'blocked' : 'wrap' }>
+      <div className={win[0].win ? 'blocked' : 'wrap' }>
         <Squares items={items} clicked={clicked}/>
       </div>
       <Title text={win[0].text}/>
-      <ResetBtn resetGame={() => reset()}/>
       <CountTry number={count} />
+      <ResetBtn resetGame={() => reset()}/>
     </div>
   );
 }

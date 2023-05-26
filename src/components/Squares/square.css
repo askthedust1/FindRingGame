@@ -1,17 +1,18 @@
 .square {
-    background: hotpink;
-    width: 20px;
-    height: 20px;
+    background: black;
+    width: 30px;
+    height: 30px;
     display: inline-block;
     margin-left: 1px;
-
 }
 
 .test {
     color: transparent;
-    width: 20px;
-    height: 20px;
+    width: 30px;
+    height: 30px;
     display: inline-block;
+    margin-left: 1px;
+    pointer-events: none;
 }
 
 .ring {
@@ -20,6 +21,7 @@
     height: 10px;
     border-radius: 50%;
     background: red;
+    margin: auto;
 }
 
 #hide {
@@ -28,7 +30,7 @@
 
 .blocked {
     margin: 0 auto;
-    width: 126px;
-    height: 126px;
+    width: 186px;
+    height: 186px;
     pointer-events: none;
 }

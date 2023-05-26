@@ -1,3 +1,8 @@
 .reset {
     margin-top: 20px;
+    background: black;
+    border-radius: 5px;
+    color: white;
+    border: none;
+    padding: 10px 20px;
 }

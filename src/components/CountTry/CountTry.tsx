@@ -1,4 +1,5 @@
 import React from 'react';
+import './CountTry.css'
 
 interface ICountTryProps {
     number: number;
