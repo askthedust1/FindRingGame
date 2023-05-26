@@ -44,3 +44,10 @@
 .win {
   margin-top: 20px;
 }
+
+.blocked {
+  margin: 0 auto;
+  width: 126px;
+  height: 126px;
+  pointer-events: none;
+}

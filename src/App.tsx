@@ -1,9 +1,9 @@
 import React, {useState} from 'react';
-import './App.css';
-import Square from "./components/square/Square";
 import Title from "./components/tite/Title";
 import ResetBtn from "./components/ResetBtn/ResetBtn";
-
+import CountTry from "./components/CountTry/CountTry";
+import Squares from "./components/Squares/Squares";
+import './App.css';
 
 function App() {
 
@@ -23,7 +23,7 @@ function App() {
 
   const [items, setItems] = useState(createItems());
   const [count, setCount] = useState(0);
-  const [win, setWin] = useState('');
+  const [win, setWin] = useState([{text: '', win: false}]);
 
 
   const clicked = (id: number) => {
@@ -34,34 +34,36 @@ function App() {
     itemsCopy[index] = itmCopy;
     setItems(itemsCopy);
     setCount(count + 1);
+
     if (itmCopy.hasItem === true) {
-      setWin('You win!');
+      const winCopy = [...win];
+      let wCopy = { ...winCopy[0] };
+      wCopy = {text: 'You win!', win: true};
+      winCopy[0] = wCopy;
+      setWin(winCopy);
       setCount(count);
     }
   };
 
   const reset = () => {
     setItems(createItems());
-    setWin('');
+    const winCopy = [...win];
+    let wCopy = { ...winCopy[0] };
+    wCopy = {text: '', win: false};
+    winCopy[0] = wCopy;
+    setWin(winCopy);
     setCount(0);
-  }
+  };
+
 
   return (
     <div className="App">
-      <div className="wrap">
-        {items.map(item => {
-          return <Square
-              key={item.id}
-              squareClass={item.clicked ? 'test' : 'square'}
-              onChangeSquare={() => clicked(item.id)}
-              ring={item.hasItem ? 'ring' : ''}
-              hide={item.clicked && item.hasItem ? ' ' : 'hide'}
-          />
-        })}
+      <div className={win[0].text ? 'blocked' : 'wrap' }>
+        <Squares items={items} clicked={clicked}/>
       </div>
-      <Title text={win}/>
+      <Title text={win[0].text}/>
       <ResetBtn resetGame={() => reset()}/>
-      <div>Количество попыток: {count}</div>
+      <CountTry number={count} />
     </div>
   );
 }
