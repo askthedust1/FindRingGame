@@ -1,4 +1,5 @@
 import React from 'react';
+import './Title.css';
 
 interface ITitleProps {
     text: string;

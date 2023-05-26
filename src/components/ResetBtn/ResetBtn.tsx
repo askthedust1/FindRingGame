@@ -1,4 +1,5 @@
 import React from 'react';
+import './ResetBtn.css';
 
 interface IResetBtnProps {
     resetGame: React.MouseEventHandler;

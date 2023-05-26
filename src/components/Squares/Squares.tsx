@@ -1,18 +1,13 @@
+import React from "react";
 import Square from "./Square";
 import {ISquare} from "../../types";
-import React from "react";
+import './square.css'
 
 interface IProps {
     items: ISquare[];
     clicked: (id: number) => void;
 }
 
-// props = {
-//   people: [],
-//   increaseAge: Function,
-//   changeName: Function,
-//   removePerson: Function,
-// }
 
 const Squares: React.FC<IProps> = ({items, clicked}) => {
     return (

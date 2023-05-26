@@ -1,4 +1,5 @@
 import React from 'react';
+import './square.css'
 
 interface ISquareProps {
     onChangeSquare: React.MouseEventHandler<Element>;

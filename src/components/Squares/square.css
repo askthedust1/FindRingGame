@@ -1,0 +1,34 @@
+.square {
+    background: hotpink;
+    width: 20px;
+    height: 20px;
+    display: inline-block;
+    margin-left: 1px;
+
+}
+
+.test {
+    color: transparent;
+    width: 20px;
+    height: 20px;
+    display: inline-block;
+}
+
+.ring {
+    display: block;
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background: red;
+}
+
+#hide {
+    background: transparent;
+}
+
+.blocked {
+    margin: 0 auto;
+    width: 126px;
+    height: 126px;
+    pointer-events: none;
+}
